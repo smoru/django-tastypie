@@ -1,19 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-try:
-    from setuptools import setup
-except ImportError:
-    from ez_setup import use_setuptools
-    use_setuptools()
-    from setuptools import setup
+import os
+import setuptools
+from setuptools import setup
 
-
-from tastypie import __version__
-
+# Cargar la versión sin importar tastypie
+about = {}
+with open(os.path.join("tastypie", "version.py")) as f:
+    exec(f.read(), about)
 
 setup(
     name='django-tastypie',
-    version=__version__,
+    version=about["__version__"],
     description='A flexible & capable API layer for Django.',
     author='Daniel Lindsley',
     author_email='daniel@toastdriven.com',
