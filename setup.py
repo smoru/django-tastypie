@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-try:
-    from setuptools import setup
-except ImportError:
-    from ez_setup import use_setuptools
-
-    use_setuptools()
-    from setuptools import setup
-
+import setuptools
+from setuptools import setup
 from tastypie import __version__
 
 setuptools.dist.Distribution().get_command_class('install')
