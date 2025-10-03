@@ -10,6 +10,8 @@ except ImportError:
 
 from tastypie import __version__
 
+setuptools.dist.Distribution().get_command_class('install')
+
 setup(
     name='django-tastypie',
     version=__version__,
